@@ -1,0 +1,22 @@
+body {
+    background-color: #1122ee;
+}
+
+button {
+    background-color: fuchsia;
+}
+
+input {
+    background-color: lime;
+    width: inherit;
+}
+
+hr {
+    height: 10px ;
+    background-color: black;
+}
+
+ol {
+    font-style: italic;
+    font-family: "American Typewriter";
+}
