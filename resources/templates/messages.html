@@ -3,9 +3,26 @@
 <link rel="stylesheet" type="text/css" href="css/Styles.css" media="screen" />
 
 <body>
+<form action="/logout" method="post">
+    <button type="submit">Logout</button>
+</form>
 Hello, {{name}}
+Create your message
 <form action="/create-messages" method="post">
     <input type="text" placeholder="Enter your message" name="message"/>
+    <button type="submit">Submit</button>
+</form>
+<hr>
+Edit your message
+<form action="/edit-messages" method="post">
+    <input type="number" placeholder="Enter #" name="editNum"/>
+    <input type="text" placeholder="Enter your message" name="message"/>
+    <button type="submit">Submit</button>
+</form>
+<hr>
+Delete a message
+<form action="/delete-messages" method="post">
+    <input type="number" placeholder="Enter #" name="delete"/>
     <button type="submit">Submit</button>
 </form>
 <h2>Messages</h2>

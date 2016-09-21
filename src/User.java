@@ -1,12 +1,28 @@
+import java.util.ArrayList;
+
 /**
  * Created by joshuakeough on 9/20/16.
  */
 public class User {
     private String name;
-    private String message;
+    private String password;
+    ArrayList<Message> messages = new ArrayList();
 
     public User(String name) {
         this.name = name;
+    }
+
+    public User(String name, String password) {
+        this.name = name;
+        this.password = password;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getName() {
@@ -17,11 +33,5 @@ public class User {
         this.name = name;
     }
 
-    public String getMessage() {
-        return message;
-    }
 
-    public void setMessage(String message) {
-        this.message = message;
-    }
 }
