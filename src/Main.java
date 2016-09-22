@@ -85,8 +85,11 @@ public class Main {
         );
 
         Spark.post(
-                "/delete-message",
+                "/delete-messages",
                 ((request, response) -> {
+                    Session session = request.session();
+                    String name = session.attribute("userName");
+                    User user = users.get(name);
                     int messageNum = Integer.parseInt(request.queryParams("delete"));
                     user.messages.remove(messageNum - 1);
                     response.redirect("/");
@@ -94,8 +97,11 @@ public class Main {
                 })
         );
         Spark.post(
-                "/edit-message",
+                "/edit-messages",
                 ((request, response) -> {
+                    Session session = request.session();
+                    String name = session.attribute("userName");
+                    User user = users.get(name);
                     int messageNum = Integer.parseInt(request.queryParams("editNum"));
                     String newMessage = request.queryParams("edit");
                     user.messages.set(messageNum - 1, new Message(newMessage));
